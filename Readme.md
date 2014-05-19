@@ -237,22 +237,25 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-## Use multi-line ternary operator
+## Use ternary operator when possible
 
-The ternary operator should not be used on a single line. Split it up into multiple lines instead.
+The ternary operator is a much better way to express what a variable will be set to.
 
 *Right:*
 
 ```js
-var foo = (a === b)
-  ? 1
-  : 2;
+var foo = (a === b) ? 1 : 2;
 ```
 
 *Wrong:*
 
 ```js
-var foo = (a === b) ? 1 : 2;
+if (a === b) {
+  foo = 1;
+}
+else {
+  foo = 2;
+}
 ```
 
 ## Do not extend built-in prototypes
